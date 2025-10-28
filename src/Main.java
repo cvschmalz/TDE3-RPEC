@@ -5,6 +5,7 @@ public class Main {
 
     // função para trocar dois elementos
     public static void trocar(int[] vetor, int primeiro, int segundo) {
+//        System.out.println("Trocando " + vetor[primeiro] + " com " + vetor[segundo]);
         int temp = vetor[primeiro];
         vetor[primeiro] = vetor[segundo];
         vetor[segundo] = temp;
@@ -14,7 +15,7 @@ public class Main {
     // bubble sort com flag de parada
     // compara cada par de elementos
     // usa uma flag de parada ("trocou"): se tiver um loop onde não trocou nenhum elemento, não tem mais nada para ordenar, então ele para
-    public static void bubbleSort(int[] vetor, int comprimento) {
+    public static void bubble_sort(int[] vetor, int comprimento) {
         boolean trocou;
         do {
             trocou = false;
@@ -30,7 +31,7 @@ public class Main {
 
     // selection sort
     // procura o menor item no resto do vetor e o coloca no indice correto
-    public static void selectionSort(int[] vetor, int comprimento) {
+    public static void selection_sort(int[] vetor, int comprimento) {
         for (int i = 0; i < comprimento - 1; i++) {
             int indice = i;
             for (int j = i + 1; j < comprimento; j++) {
@@ -48,7 +49,7 @@ public class Main {
     // cocktail sort
     // é como um bubble sort bidirecional, roda uma vez de esquerda para direita e depois da direita para esquerda
     // usa uma flag de parada ("trocou"): se tiver um loop onde não trocou nenhum elemento, não tem mais nada para ordenar, então ele para
-    public static void cocktailSort(int[] vetor, int comprimento) {
+    public static void cocktail_sort(int[] vetor, int comprimento) {
         boolean trocou = true;
         // grava o começo e final da parte que ainda não foi ordenada
         int comeco_atual = 0;
@@ -80,7 +81,7 @@ public class Main {
 
     // comb sort
     // compara elementos com gaps cada vez menores
-    public static void combSort(int[] vetor, int comprimento) {
+    public static void comb_sort(int[] vetor, int comprimento) {
         int gap = comprimento;
         boolean trocou = true;
         while (gap > 1 || trocou) {
@@ -98,7 +99,7 @@ public class Main {
 
     // gnome sort
     // se a ordem estiver certa, vai à direita, se estiver errada, troca e vai à esquerda
-    public static void gnomeSort(int[] vetor, int comprimento) {
+    public static void gnome_sort(int[] vetor, int comprimento) {
         int i = 0;
         while (i < comprimento) {
             iteracoes++;
@@ -113,7 +114,8 @@ public class Main {
 
     // bucket sort
     // esse algorítmo não usa trocas!
-    public static void bucketSort(int[] vetor, int comprimento) {
+    // procura o valor mínimo e o valor máximo, assim como a frequência de cada valor, e monta um vetor ordenado com base nessas informações
+    public static void bucket_sort(int[] vetor, int comprimento) {
         // procura valor mínimo e máximo:
         int min = vetor[0], max = vetor[0];
         for (int i = 1; i < comprimento; i++) {
@@ -150,12 +152,12 @@ public class Main {
         iteracoes = 0;
 
         switch (nome) {
-            case "bubble" -> bubbleSort(copia, comprimento);
-            case "selection" -> selectionSort(copia, comprimento);
-            case "cocktail" -> cocktailSort(copia, comprimento);
-            case "comb" -> combSort(copia, comprimento);
-            case "gnome" -> gnomeSort(copia, comprimento);
-            case "bucket" -> bucketSort(copia, comprimento);
+            case "bubble" -> bubble_sort(copia, comprimento);
+            case "selection" -> selection_sort(copia, comprimento);
+            case "cocktail" -> cocktail_sort(copia, comprimento);
+            case "comb" -> comb_sort(copia, comprimento);
+            case "gnome" -> gnome_sort(copia, comprimento);
+            case "bucket" -> bucket_sort(copia, comprimento);
         }
 
         System.out.println("[" + nome + "] trocas: " + trocas + ", iterações: " + iteracoes);
