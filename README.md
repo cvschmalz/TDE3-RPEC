@@ -114,7 +114,7 @@ Algoritmos que trocam apenas quando necessário (Selection e Comb sort) apresent
 
 Bucket sort tem menor número de iterações, pois utiliza contagem e distribuição ao invés de comparar elementos individualmente. Algoritmos bidirecionais (Cocktail sort) ou com pequenas otimizações (Comb sort) reduzem significativamente iterações em comparação com Bubble e Gnome sort.
 
-## Impacto da ordem inicial do vetor:
+### Impacto da ordem inicial do vetor:
 
 Vetores já ordenados (Vetor 2) mostram que Bubble e Cocktail sort podem ser extremamente eficientes, pois detectam rapidamente que não há necessidade de trocas. Vetores em ordem decrescente (Vetor 3) representam o pior caso para algoritmos que dependem de trocas adjacentes, evidenciando o impacto da ordem inicial.
 
